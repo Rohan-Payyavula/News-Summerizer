@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+</head>
+<body>
+    <h1>News Summarizer</h1>
+    <form method="POST">
+        <input type="text" name="query" placeholder="Search Topic">
+        <button type="submit">Search</button>
+    </form>
+    <h2>Results:</h2>
+    {% for article in summaries %}
+    <div>
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.summary }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
+
+
